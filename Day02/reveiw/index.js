@@ -725,49 +725,33 @@ document.body.appendChild(roomListSection);
 
 const { roomList } = data.result;
 
+const makeParagraph = (text, parents, tag) => {
+  const para = document.createElement(tag);
+  para.style.cssText = "margin: 0; text-overflow: ellipsis; white-space: nowrap; overflow: hidden";
+  para.innerText = `${text}`;
+  parents.appendChild(para);
+};
+
 roomList.forEach((v) => {
   const newArticle = document.createElement("article");
-  newArticle.style.display = "flex";
-  newArticle.style.gap = "10px";
-  newArticle.style.padding = "10px";
+  newArticle.style.cssText = "display:flex; gap:10px; padding:10px;";
 
   const newPictrue = document.createElement("picture");
-  newPictrue.style.width = "140px";
-  newPictrue.style.height = "140px";
+  newPictrue.style.cssText = "width:140px; height:140px";
 
   const newImage = document.createElement("img");
-  newImage.style.width = "100%";
-  newImage.style.height = "100%";
-  newImage.style.objectFit = "cover";
+  newImage.style.cssText = "width:100%; height:100%; object-fit:cover";
   newImage.src = v.imgUrlList[0];
   newPictrue.appendChild(newImage);
   newArticle.appendChild(newPictrue);
 
-  // display: flex; flex-direction: column; width: 200px
   const newDiv = document.createElement("div");
-  newDiv.style.display = "flex";
-  newDiv.style.flexDirection = "column";
-  newDiv.style.width = "200px";
+  newDiv.style.cssText = "display: flex; flex-direction: column; width: 200px";
 
-  const price = document.createElement("h6");
-  price.style.cssText = "margin: 0; text-overflow: ellipsis; white-space: nowrap; overflow: hidden";
-  price.innerText = `${v.priceTypeName} ${v.priceTitle}`;
-  newDiv.appendChild(price);
-
-  const type = document.createElement("p");
-  type.style.cssText = "margin: 0; text-overflow: ellipsis; white-space: nowrap; overflow: hidden";
-  type.innerText = `${v.roomTypeName} ${v.complexName}`;
-  newDiv.appendChild(type);
-
-  const option = document.createElement("p");
-  option.style.cssText = "margin: 0; text-overflow: ellipsis; white-space: nowrap; overflow: hidden";
-  option.innerText = `${v.roomDesc}`;
-  newDiv.appendChild(option);
-
-  const title = document.createElement("p");
-  title.style.cssText = "margin: 0; text-overflow: ellipsis; white-space: nowrap; overflow: hidden";
-  title.innerText = `${v.roomTitle}`;
-  newDiv.appendChild(title);
+  makeParagraph(`${v.priceTypeName} ${v.priceTitle}`, newDiv, "h6");
+  makeParagraph(`${v.roomTypeName} ${v.complexName}`, newDiv, "p");
+  makeParagraph(`${v.roomDesc}`, newDiv, "p");
+  makeParagraph(`${v.roomTitle}`, newDiv, "p");
 
   const btn = document.createElement("button");
   btn.style.cssText = "padding:4px; background-color:skyblue; border-radius:4px; border:none";

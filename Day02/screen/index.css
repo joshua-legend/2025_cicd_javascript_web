@@ -1,0 +1,13 @@
+.box {
+  height: 70vh;
+  background-color: skyblue;
+  transition: all 0.5s;
+}
+
+.show {
+  transform: translateY(0vh);
+}
+
+.hidden {
+  transform: translateY(-70vh);
+}
