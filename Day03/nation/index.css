@@ -1,0 +1,20 @@
+article {
+  display: flex;
+  flex-direction: column;
+}
+article > nav {
+  background-color: #efefef;
+}
+article > nav > ul {
+  display: flex;
+}
+article > nav > ul > li {
+  padding: 16px;
+}
+
+article > section {
+  padding: 20px;
+}
+article > section > h3 {
+  font-size: 40px;
+}
