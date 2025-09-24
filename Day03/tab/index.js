@@ -4,21 +4,20 @@ const tabList = [
   { id: 2, target: document.querySelector("#contact"), title: "Contact", desc: "Get in touch, or swing by for a cup of coffee.", mainColor: "#2196F3" },
   { id: 3, target: document.querySelector("#about"), title: "About", desc: "Who we are and what we do.", mainColor: "#8E4EC6" },
 ];
-const title = document.querySelector("#title");
-const desc = document.querySelector("#desc");
-const section = document.querySelector("#section");
-const reset = (target) => {
-  tabList
-    .filter((v) => v.target != target)
-    .forEach((v) => {
-      v.target.style.backgroundColor = "#eeeeee";
-      v.target.style.color = "black";
-    });
+
+const resetTab = (target) => {
+  target.style.backgroundColor = "#eeeeee";
+  target.style.color = "black";
 };
+const renderSection = (num) => {
+  document.querySelector("#title").innerText = tabList[num].title;
+  document.querySelector("#desc").innerText = tabList[num].desc;
+  document.querySelector("#section").style.backgroundColor = tabList[num].mainColor;
+};
+
+const reset = (target) => tabList.filter((v) => v.target != target).forEach((v) => resetTab(v.target));
 const select = (num, target) => {
-  title.innerText = tabList[num].title;
-  desc.innerText = tabList[num].desc;
-  section.style.backgroundColor = tabList[num].mainColor;
+  renderSection(num);
   target.style.backgroundColor = tabList[num].mainColor;
   target.style.color = "white";
 };
