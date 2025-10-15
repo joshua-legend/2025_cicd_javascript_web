@@ -1,0 +1,10 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.counter {
+  width: 300px;
+}
