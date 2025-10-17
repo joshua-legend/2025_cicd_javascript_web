@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="index7.js" defer></script>
+  </head>
+  <body>
+    <body>
+      <h1>⚔️ Emoji Battle RPG</h1>
+
+      <!-- 1. 캐릭터 선택 단계 -->
+      <section id="select-screen">
+        <h2>캐릭터를 선택하세요</h2>
+        <div id="characters">
+          <button data-name="용사" data-emoji="🧙‍♂️">🧙‍♂️ 용사</button>
+          <button data-name="기사" data-emoji="🗡️">🗡️ 기사</button>
+          <button data-name="도적" data-emoji="🕵️">🕵️ 도적</button>
+        </div>
+      </section>
+
+      <!-- 2. 전투화면 -->
+      <section id="battle-screen" style="display: none">
+        <div id="player"></div>
+        <div id="vs">⚔️ VS ⚔️</div>
+        <div id="monster"></div>
+        <div id="logs"></div>
+        <button id="attackBtn">공격</button>
+      </section>
+
+      <!-- 3. 결과화면 -->
+      <section id="result-screen" style="display: none">
+        <h2 id="result"></h2>
+        <button id="restartBtn">다시 시작</button>
+      </section>
+    </body>
+  </body>
+</html>
