@@ -1,0 +1,42 @@
+body {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+  /* background-image: url("images/sunny.jpg"); */
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonList {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.buttonList > button {
+  color: tomato;
+  text-decoration: none;
+  padding: 10px 30px;
+  display: inline-block;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  border-bottom: 4px solid rgba(0, 0, 0, 0.21);
+  border-radius: 4px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.timeList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 50px;
+}
